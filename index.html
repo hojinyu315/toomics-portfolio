@@ -514,12 +514,13 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: none;
-      transition: filter 0.25s, transform 0.25s;
+      /* 기본은 어둡게, 호버 시 걷어냄 (온더룩·닷밀과 동일) */
+      filter: brightness(0.56) saturate(0.88);
+      transition: filter 0.35s ease, transform 0.35s ease;
     }
 
-    .project-card:hover .card-thumb-wrap { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .project-card:hover .project-card-thumb { transform: scale(1.03); }
+    .project-card:hover .card-thumb-wrap { transform: translateY(-4px) scale(1.025); box-shadow: 0 14px 30px rgba(0,0,0,0.16); }
+    .project-card:hover .project-card-thumb { filter: brightness(1) saturate(1); transform: scale(1.04); }
 
     .project-card-body {
       display: flex;
